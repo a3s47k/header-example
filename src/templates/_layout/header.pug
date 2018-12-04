@@ -1,26 +1,59 @@
 <!-- ////////////// HEADER ////////////// -->
 header
 	.container
-		.menu-bar
-			.main-nav#my-main-nav
-				.navbar-brand
-					img(src="./img/logo.png", alt="logo")
-				.navbar
+		.navbar-wrapper#nav-bar-wrapper
+			.navbar-brand
+				img(src="./img/logo.png", alt="logo")
+			button.hamburger.hamburger--emphatic(type='button')
+				span.hamburger-box
+					span.hamburger-inner
+
+			.navbar#demo
+				ul.nav
+					li.nav-item.active
+						a(href="#").nav-link Home
+					li.nav-item
+						a(href="#").nav-link News
+					li.nav-item
+						a(href="#").nav-link About
+					li.nav-item
+						a(href="#").nav-link Help
+					li.nav-item.drop-down.hide
+						a(href="#").nav-link Support
+							i.fa.fa-caret-down
+						.drop-down-menu.hide
+							a(href="#").dropdown-item Phone
+							a(href="#").dropdown-item Email
+					li.nav-item.drop-down.hide
+						a(href="#").nav-link Store
+							i.fa.fa-caret-down
+						.drop-down-menu.hide
+							a(href="#").dropdown-item Items
+							a(href="#").dropdown-item Card
+section.header-sidebar
+	.container
+		.row
+			.col
+				.navbar#demo
 					ul.nav
 						li.nav-item.active
 							a(href="#").nav-link Home
 						li.nav-item
-							a(href="#").nav-link  News
+							a(href="#").nav-link News
 						li.nav-item
-							a(href="#").nav-link  About
+							a(href="#").nav-link About
 						li.nav-item
-							a(href="#").nav-link  Help 
-						li.nav-item.drop-down
+							a(href="#").nav-link Help
+						li.nav-item.drop-down.hide
 							a(href="#").nav-link Support
 								i.fa.fa-caret-down
-							.drop-down-menu
+							.drop-down-menu.hide
 								a(href="#").dropdown-item Phone
 								a(href="#").dropdown-item Email
-						li.nav-item.icon
-							a(href="#").nav-link
-								i.fa.fa-bars
+						li.nav-item.drop-down.hide
+							a(href="#").nav-link Store
+								i.fa.fa-caret-down
+							.drop-down-menu.hide
+								a(href="#").dropdown-item Items
+								a(href="#").dropdown-item Card
+section.header-sidebar-bg

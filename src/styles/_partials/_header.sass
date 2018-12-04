@@ -1,53 +1,221 @@
-
+$hamburger-layer-width: 10px !default
+$hamburger-layer-height: 4px !default
 
 header
-	top: 0
-	width: 100vw
-	min-height: 5rem
-	background: #f1f1f1
+	position: fixed
+	width: 100%
+	z-index: 8
+	background: rgba(#fff,1)
+	min-height: 3rem
+	display: flex
+	justify-content: center
+	align-items: center
+	&.active
+		// Wrapp all element
+	.navbar-wrapper
+		display: flex
+		justify-content: center
+		align-items: center
+			// Bran elements
+		.navbar-brand
+			margin-right: auto
+			img
+				width: 100%
+				height: auto
+				width: 8rem
+		button
+			outline: none
+		.toggle-menu
+			display: block
+		.navbar
+			display: none
 	
-	.menu-bar
-		position: relative
-		top: 0
-		.main-nav
+			.nav
+				.nav-item
+				.drop-down
+					float: left
+					position: relative
+					.drop-down-menu
+						z-index: 99
+						position: absolute
+						background: white
+						border: 1px solid grey
+						min-width: 10rem
+						+mar(0.1rem null null 0)
+						&:before,&:after
+							bottom: 100%
+							left: 20%
+							border: solid
+							content: " "
+							height: 0
+							width: 0
+							position: absolute
+							pointer-events: none
+						&:before
+							border-color: rgba(156, 156, 156, 0)
+							border-bottom-color: black
+							border-width: 15px
+							margin-left: -15px
+						&:after
+							border-color: rgba(255, 255, 255, 0)
+							border-bottom-color: #ffffff
+							border-width: 14px
+							margin-left: -14px
+					.hide
+						display: none
+					.show
+						display: block
+						.dropdown-item
+							color: black
+							float: none
+							text-align: left
+							&:hover
+								background: blue
+	+media-breakpoint-up(sm)
+		.navbar-wrapper
+			.navbar-brand
+			.navbar
+				.nav
+					.nav-item
+					.drop-down
+						.drop-down-menu
+						.nav-link
+							.dropdown-item
+
+	+media-breakpoint-up(md)
+		.navbar-wrapper
+			.navbar-brand
+			.navbar
+				.nav
+					.nav-item
+					.drop-down
+						.drop-down-menu
+						.nav-link
+							.dropdown-item
+	+media-breakpoint-up(lg)
+		// Wrapper class contain all munebar component
+		.navbar-wrapper
 			.navbar-brand
 				float: left
+				margin-right: auto
 				img
 					width: 100%
+			button
+				display: none
+			.toggle-menu
+				display: none
 			.navbar
-				position: absolute
-
-				right: 0
+				display: block
+				+pad(0 0)
 				ul
 					list-style-type: none
 					li
 						display: inline-block
 						background: rgba(grey,0.2)
-						+pad(0.5rem 1rem 0.5rem 1rem)
 						a
-							
+							+pad(1rem 2rem 1rem 2rem)
 							color: #333333
 							text-decoration: none
+							i
+								+pad(null null null 0.5rem)
 						&:hover
 							background: grey
 						&.active
 							background: grey
 					.nav-item
-					.drop-down
-						float: left
-						position: relative
-						.drop-down-menu
-							display: none
-							z-index: 99
-							position: absolute
-							background: grey
-							min-width: 8rem
-							+mar(0.5rem null null -1rem)
-							.dropdown-item
-								color: #fff
-								float: none
-								text-align: left
-								&:hover
-									background: blue
+						.nav-link
+							.hamburger
+								.hamburger-box
+									.hamburger-inner
 					
-								
+	+media-breakpoint-up(xl)
+		.navbar-wrapper
+			.navbar-brand
+			.navbar
+				.nav
+					.nav-item
+					.drop-down
+						.drop-down-menu
+						.nav-link
+							.dropdown-item
+.header-sidebar
+	width: 0
+	top: 3.5rem
+	position: fixed
+	right: 0
+	opacity: 0
+	z-index: 10
+	min-width: 20rem
+	height: 0
+	transition: 0.25s all ease-in-out
+	background: linear-gradient(#e66465, #9198e5)
+	&.active
+		opacity: 1
+		height: 100%
+		width: calc(100vw/4)
+	.navbar
+	
+		.nav
+			display: block
+			
+			.nav-item
+				width: 100%
+				+margin(1.2rem 0 0 0)
+				.nav-link
+					text-decoration: none
+					color: #fff
+					font-weight: 500
+					font-size: 1.2rem
+			.drop-down
+				float: left
+				position: relative
+				.drop-down-menu
+					z-index: 99
+					position: absolute
+					background: white
+					border: 1px solid grey
+					min-width: 10rem
+					+mar(0.1rem null null 0)
+					&:before,&:after
+						bottom: 100%
+						left: 20%
+						border: solid
+						content: " "
+						height: 0
+						width: 0
+						position: absolute
+						pointer-events: none
+					&:before
+						border-color: rgba(156, 156, 156, 0)
+						border-bottom-color: black
+						border-width: 15px
+						margin-left: -15px
+					&:after
+						border-color: rgba(255, 255, 255, 0)
+						border-bottom-color: #ffffff
+						border-width: 14px
+						margin-left: -14px
+				.hide
+					display: none
+				.show
+					display: block
+					.dropdown-item
+						color: black
+						float: none
+						text-align: left
+						&:hover
+							background: blue
+.header-sidebar-bg
+	width: 0
+	top: 3.5rem
+	position: fixed
+	left: 0
+	opacity: 0
+	z-index: 9
+	height: 0
+	transition: 0.25s all ease-in-out
+	background: rgba(#000,0.9)
+	&.active
+		opacity: 1
+		height: 100%
+		width: 75%
